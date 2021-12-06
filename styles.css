@@ -20,15 +20,18 @@ html{
     scroll-behavior: smooth;
 }
 #navbg{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/imgsec1.jpg") no-repeat center;
-    background-size: cover;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/imgsec1.jpg") no-repeat center; */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),#222325;
 }  
 .navbar-brand{
     font-family: 'Goldman', cursive;
+    font-size: 1.6rem;
    color: #fff !important;
-   
+    margin-left: 20px;
 }
-
+.navbar {
+    height: 10vh;
+}
 .logo{
     height: 2em;
     width: 4em;
@@ -44,7 +47,10 @@ html{
 .btn-close:hover{
     color: #00d679;
 }
- 
+.nav-link {
+    font-family:"Ubuntu",sans-serif;
+    font-size: 17px;
+}
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
     color: #fff;
 }
@@ -56,10 +62,7 @@ html{
     color: #00d679;
     
 }
-/*.navbar-light .navbar-nav .nav-link:focus{
-    color: #00d679;
-    border-bottom: 4px solid #00d679;  
-}*/
+
 .navbar .navbar-toggler-icon {
     background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=00d679');
 }
@@ -104,8 +107,11 @@ html{
 }
 .home{
     display: flex;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/heroimgfktop.jpg") no-repeat center;
-    height: 115vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/minimal.jpg") no-repeat left;
+    height: 100vh;
+    background-color: #222325;
+    background-size: contain;
+    background-position: right;
     color: #fff;
     min-height: 500px;
     font-family: 'Ubuntu',sans-serif;
