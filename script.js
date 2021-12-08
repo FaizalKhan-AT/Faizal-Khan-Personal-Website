@@ -1,26 +1,30 @@
 
-$(document).ready(function(){
-    $(window).scroll(function(){
-        $('nav').toggleClass('scrolled',$(this).scrollTop()>50);
+$(document).ready(function () {
+  $(window).scroll(function () {
+    $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
 
-    });
-    /*$('#ChangeToggle').click(function() {
-    $('#navbar-hamburger').toggleClass('hidden');
-    $('#navbar-close').toggleClass('hidden');  
-  });*/
-  $('.navbar-nav>li>a').on('click', function(){
-    $('.navbar-collapse').collapse('hide');
   });
 
-  $('.skill-per').each(function(){
+  document.querySelector('#check').addEventListener("change", (e) => {
+    e.target.checked === true ? document.querySelector('.navbar-collapse').classList.add('show') : document.querySelector('.navbar-collapse').classList.remove('show')
+    
+  })
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener("click", () => {
+      document.querySelector('.navbar-collapse').classList.remove('show')
+      document.querySelector('#check').checked = false
+    })
+  })
+  $('.skill-per').each(function () {
     var $this = $(this);
-    var per=$this.attr('per');
-    $this.css("width",per+'%');
-   
+    var per = $this.attr('per');
+    $this.css("width", per + '%');
+
 
   });
 
-  $(".scroll-top-btn").click(function(event) {
+  $(".scroll-top-btn").click(function (event) {
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
@@ -29,8 +33,8 @@ $(document).ready(function(){
 });
 /* scroll up*/
 var mybutton = document.getElementById("scrbtn");
-window.onscroll = function() {scrollFunction()};
-function scrollFunction(){
+window.onscroll = function () { scrollFunction() };
+function scrollFunction() {
   if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
     scrbtn.style.display = "block";
   } else {
@@ -38,42 +42,24 @@ function scrollFunction(){
   }
 };
 function topFunction() {
-  document.body.scrollTop = 0; 
-  document.documentElement.scrollTop = 0; 
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 //typing
-var type= new Typed(".typing",{
-  strings:["Web Developer.","YouTuber.","FreeLancer."],
-  typeSpeed:100,
-  backSpeed:60,
-  loop:true
+var type = new Typed(".typing", {
+  strings: ["Web Developer.", "YouTuber.", "FreeLancer."],
+  typeSpeed: 100,
+  backSpeed: 60,
+  loop: true
 });
-//hambuger to cross
-
-$(function(){
-  $("[data-trigger]").on("click",function(){
-    var target_id  =$(this).attr("data-trigger");
-    $(target_id).toggleClass("show");
-    $('body').toggleClass("offcanvas-active")
-  });
-  $('.btn-close').click(function(e){
-    $('.navbar-collapse').removeClass("show");
-    $('body').removeClass("offcanvas-active");
-  })
-});
-
 
 //Ajax for form submittion
 
 window.addEventListener("DOMContentLoaded", function () {
-  // get the form elements defined in your form HTML above
 
   var form = document.getElementById("submit-form");
-  // var button = document.getElementById("my-form-button");
   var status = document.getElementById("status");
-
-  // Success and Error functions for after the form is submitted
 
   function success() {
     form.reset();
@@ -111,4 +97,4 @@ function ajax(method, url, data, success, error) {
   };
   xhr.send(data);
 }
-   
+
